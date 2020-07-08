@@ -1,0 +1,14 @@
+This is a file that i do not care about, although i would like to have something search out, such as a 
+password: 12345654321
+user.name: myGoshThatsAUserName
+but we can also just make python read the entire file, couse it`s this awesome!
+We can look for a string anywhere IN a LINE aas your selection criteria.
+
+
+We can either open a file reading each line using for, until reaches the end of it, or we can can open it enterily, making one big vector of elements by using:
+variable = open('file.txt')
+anotherVariable = variable.read()
+print( len(anotherVariable) ) # in this case it would acuse having 9845
+
+and we can even print part of the vector
+print( anotherVariable[:100] )
