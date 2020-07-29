@@ -1,6 +1,6 @@
 def getASulfixToName():
-    name = input('Name of the file:')
-    if '.' not in name:
+    name = input('Name of the file and relative path:')
+    if '.txt' not in name:
         name = name+'.txt'
         print('Since you did not mention wich extension yu want, a .txt will be added as default')   
     try:
@@ -11,13 +11,11 @@ def getASulfixToName():
         return getASulfixToName()
 
 
-
 def handleFilesToList(name):
     fhandle = open(name)
-    wordsInFile = []
-    for line in fhandle:
-        line = line.strip()
-        wordsInFile.append(line.split())
+    singleString = fhandle.read() #i made it bacause reading each line will make a list of list (each line will be a list, and each word of the line will be a element of the line list), which will bug countWordsInFile(wordsList)
+    singleString = singleString.rstrip()
+    wordsInFile = singleString.split()
     return wordsInFile
 
 def countWordsInFile(wordsList):
@@ -30,9 +28,8 @@ def main():
     name = getASulfixToName()
     wordsInFile = list()
     wordsInFile = handleFilesToList(name)
-    print(wordsInFile)
-    nad = dict()
-    
+    nad = countWordsInFile(wordsInFile)
+    print(nad)
 
 if __name__ == '__main__':
     main()
