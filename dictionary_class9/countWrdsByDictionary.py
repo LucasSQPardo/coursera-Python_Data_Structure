@@ -24,12 +24,23 @@ def countWordsInFile(wordsList):
         wordsCounted[element] = wordsCounted.get(element, 0) + 1
     return wordsCounted
 
+def getMostWrittenWord(countedWords):
+    key = None
+    value = None
+    for k,v in countedWords.items():
+        if (value == None) or (v > value):
+            key = k
+            value = v
+    print(f'Most seen KEY: {key}\nNumber of times written: {value}')
+    return
+
 def main():
     name = getASulfixToName()
     wordsInFile = list()
     wordsInFile = handleFilesToList(name)
-    nad = countWordsInFile(wordsInFile)
-    print(nad)
+    countedWords = dict()
+    countedWords = countWordsInFile(wordsInFile)
+    getMostWrittenWord(countedWords)
 
 if __name__ == '__main__':
     main()
