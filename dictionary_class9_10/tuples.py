@@ -24,7 +24,7 @@ def orderedList(someDict):
     #     newTuple = (value, key)
     #     olList.append(newTuple)
     # olList = sorted(olList, reverse=True)
-    return olList
+    return olList #return a list of tuples
 
 def main():
     newString = removeNonisalNun(bigString)
