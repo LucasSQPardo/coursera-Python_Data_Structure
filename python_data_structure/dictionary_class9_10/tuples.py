@@ -19,7 +19,7 @@ def orderedList(someDict):
     olList = list()
     ### a more compact and complex way to order it, to know more about it, search for List Comprehension ###
     olList = sorted( [ (value, key) for key,value in someDict.items()])
-    #this is a bigger way to do the same thing
+    ### this is a bigger way to do the same thing ###
     # for key,value in someDict.items():
     #     newTuple = (value, key)
     #     olList.append(newTuple)
